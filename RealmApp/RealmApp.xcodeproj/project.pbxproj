@@ -17,6 +17,8 @@
 		BC53C4C72AF2AFCB000B242A /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53C4C62AF2AFCA000B242A /* StorageManager.swift */; };
 		BC53C4C92AF2B3EE000B242A /* TasksListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53C4C82AF2B3EE000B242A /* TasksListModel.swift */; };
 		BC53C4CB2AF2B409000B242A /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53C4CA2AF2B409000B242A /* ListModel.swift */; };
+		BC53C4CD2AF2B702000B242A /* TasksListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53C4CC2AF2B702000B242A /* TasksListTVC.swift */; };
+		BC53C4CF2AF2B791000B242A /* TasksTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53C4CE2AF2B791000B242A /* TasksTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		BC53C4C62AF2AFCA000B242A /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		BC53C4C82AF2B3EE000B242A /* TasksListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListModel.swift; sourceTree = "<group>"; };
 		BC53C4CA2AF2B409000B242A /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		BC53C4CC2AF2B702000B242A /* TasksListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksListTVC.swift; sourceTree = "<group>"; };
+		BC53C4CE2AF2B791000B242A /* TasksTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 		BC53C4BD2AF230A0000B242A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BC53C4CC2AF2B702000B242A /* TasksListTVC.swift */,
+				BC53C4CE2AF2B791000B242A /* TasksTVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,8 +203,10 @@
 			files = (
 				BC53C4A92AF2303E000B242A /* AppDelegate.swift in Sources */,
 				BC53C4AB2AF2303E000B242A /* SceneDelegate.swift in Sources */,
+				BC53C4CF2AF2B791000B242A /* TasksTVC.swift in Sources */,
 				BC53C4CB2AF2B409000B242A /* ListModel.swift in Sources */,
 				BC53C4C72AF2AFCB000B242A /* StorageManager.swift in Sources */,
+				BC53C4CD2AF2B702000B242A /* TasksListTVC.swift in Sources */,
 				BC53C4C92AF2B3EE000B242A /* TasksListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
