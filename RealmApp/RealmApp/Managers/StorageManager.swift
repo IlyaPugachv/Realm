@@ -108,4 +108,14 @@ class StorageManager {
     static func findRealmFile() {
         print("Realm is located at:", realm.configuration.fileURL!)
     }
+    
+    static func moveTask(from sourceIndex: Int, to destinationIndex: Int, tasksList: TasksList) {
+            guard sourceIndex != destinationIndex else { return }
+            
+            try! realm.write {
+                let taskToMove = tasksList.tasks[sourceIndex]
+                tasksList.tasks.remove(at: sourceIndex)
+                tasksList.tasks.insert(taskToMove, at: destinationIndex)
+            }
+        }
 }

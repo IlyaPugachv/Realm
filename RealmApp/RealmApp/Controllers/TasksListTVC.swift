@@ -8,8 +8,6 @@ class TasksListTVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // StorageManager.deleteAll()
-
         tasksLists = StorageManager.getAllTasksLists().sorted(byKeyPath: "name")
         
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonSystemItemSelector))
@@ -109,8 +107,8 @@ class TasksListTVC: UITableViewController {
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
         
-        alertController.addAction(saveAction)
         alertController.addAction(cancelAction)
+        alertController.addAction(saveAction)
         
         alertController.addTextField { textField in
             alertTextField = textField

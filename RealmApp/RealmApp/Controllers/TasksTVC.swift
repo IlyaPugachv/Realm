@@ -42,13 +42,14 @@ class TasksTVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        /// title
         title = currentTasksList?.name
-        /// filtering tasks
         filteringTasks()
         
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonSystemItemSelector))
-        navigationItem.setRightBarButton(add, animated: true)
+        let edit = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editBarButtonSystemItemSelector))
+
+        navigationItem.setRightBarButtonItems([add, edit], animated: true)
+
     }
 
     // MARK: - Table view data source
@@ -70,6 +71,7 @@ class TasksTVC: UITableViewController {
         cell.detailTextLabel?.text = task.note
         return cell
     }
+
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { true }
     
@@ -103,20 +105,26 @@ class TasksTVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool { true }
     
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
     }
-    
+
+    override func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool { false }
+
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        guard let currentTasksList = currentTasksList else { return }
+            StorageManager.moveTask(from: sourceIndexPath.row, to: destinationIndexPath.row, tasksList: currentTasksList)
+    }
+
     private func filteringTasks() {
         notCompletedTasks = currentTasksList?.tasks.filter("isComplete = false")
         completedTasks = currentTasksList?.tasks.filter("isComplete = true")
         tableView.reloadData()
     }
     
-    @objc
-    private func addBarButtonSystemItemSelector() {
-        alertForAddAndUpdatesTask(tasksTVCFlow: .addingNewTask)
-    }
+    @objc private func addBarButtonSystemItemSelector() { alertForAddAndUpdatesTask(tasksTVCFlow: .addingNewTask) }
+    
+    @objc private func editBarButtonSystemItemSelector() { tableView.isEditing = !tableView.isEditing }
     
     private func alertForAddAndUpdatesTask(tasksTVCFlow: TasksTVCFlow) {
         
@@ -164,8 +172,8 @@ class TasksTVC: UITableViewController {
         
         let cancelAction = UIAlertAction(title: txtAlertData.cancelTxt, style: .destructive)
         
-        alert.addAction(saveAction)
         alert.addAction(cancelAction)
+        alert.addAction(saveAction)
         
         present(alert, animated: true)
     }
