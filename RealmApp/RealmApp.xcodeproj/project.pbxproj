@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC4DEFC72AF908D400892400 /* UITableViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4DEFC62AF908D400892400 /* UITableViewCellExtensions.swift */; };
 		BC53C4A92AF2303E000B242A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53C4A82AF2303E000B242A /* AppDelegate.swift */; };
 		BC53C4AB2AF2303E000B242A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC53C4AA2AF2303E000B242A /* SceneDelegate.swift */; };
 		BC53C4B02AF2303E000B242A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC53C4AE2AF2303E000B242A /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC4DEFC62AF908D400892400 /* UITableViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtensions.swift; sourceTree = "<group>"; };
 		BC53C4A52AF2303E000B242A /* RealmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC53C4A82AF2303E000B242A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BC53C4AA2AF2303E000B242A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC4DEFC52AF908A900892400 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BC4DEFC62AF908D400892400 /* UITableViewCellExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BC53C49C2AF2303E000B242A = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 		BC53C4A72AF2303E000B242A /* RealmApp */ = {
 			isa = PBXGroup;
 			children = (
+				BC4DEFC52AF908A900892400 /* Extensions */,
 				BC53C4C52AF233F0000B242A /* Managers */,
 				BC53C4C42AF233C8000B242A /* Models */,
 				BC53C4BE2AF230ED000B242A /* View */,
@@ -204,6 +215,7 @@
 				BC53C4A92AF2303E000B242A /* AppDelegate.swift in Sources */,
 				BC53C4AB2AF2303E000B242A /* SceneDelegate.swift in Sources */,
 				BC53C4CF2AF2B791000B242A /* TasksTVC.swift in Sources */,
+				BC4DEFC72AF908D400892400 /* UITableViewCellExtensions.swift in Sources */,
 				BC53C4CB2AF2B409000B242A /* ListModel.swift in Sources */,
 				BC53C4C72AF2AFCB000B242A /* StorageManager.swift in Sources */,
 				BC53C4CD2AF2B702000B242A /* TasksListTVC.swift in Sources */,
